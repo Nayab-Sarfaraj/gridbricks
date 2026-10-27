@@ -190,29 +190,6 @@ The script:
 
 ---
 
-## 7. Verification & Test Suite
-
-The backend includes a comprehensive pytest suite covering all business logic, hand-calculated fixtures, boundary conditions, and schema validations:
-
-```bash
-cd backend
-uv run pytest -v
-```
-
-**Test Coverage Highlights:**
-- `test_hourly_forecast_maps_to_both_half_hours`: Proves `:00` forecasts correctly apply to `:30` half-hours.
-- `test_slot_published_after_cutoff_gets_no_forecast_before_cutoff`: Verifies strict D-1 09:00 cutoff boundary enforcement.
-- `test_shortfall_floors_at_zero_when_no_shortfall`: Verifies buffer floor logic.
-- `test_debiased_buffer_reduces_buffer_when_bias_is_negative`: Verifies debiased spread buffer calculation.
-- `test_real_january_delivery_day_matches_hand_check`: Verifies Jan 15 against hand-reconciled raw figures.
-- `test_root_serves_frontend_when_built`: Proves single-container SPA serving works seamlessly.
-
-Frontend linting and type-checking:
-```bash
-cd frontend
-npm run lint
-npm run build
-```
 
 ---
 
@@ -239,4 +216,4 @@ The application is deployed live on **Render** as a unified Docker Web Service:
 
 ## 9. AI Tools Disclosure
 
-In accordance with the project guidelines, it is explicitly disclosed that **AI tools (Claude 3.7 / Claude Code)** were utilized to assist in the construction of this codebase. AI assistance was applied toward rapid scaffolding, test fixture generation, mathematical reconciliation of percentiles, and UI component drafting, under continuous human architectural supervision and verification.
+In accordance with the project guidelines, it is explicitly disclosed that **AI tools (gemini 3.8)** were utilized to assist in the construction of this codebase.
